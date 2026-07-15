@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+  --color-deepblack: #0D0D0D;
+  --color-charcoal: #1A1A1A;
+  --color-gold: #D4AF37;
+  --color-gold-hover: #E5C158;
+  --color-cream: #F5F5DC;
+  --color-maroon: #3D1F1F;
+  --font-display: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-deepblack text-cream font-sans antialiased;
+    background-color: var(--color-deepblack);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .btn-gold {
+    @apply inline-flex items-center justify-center px-6 py-3 text-sm tracking-[0.2em] uppercase bg-transparent border border-gold text-gold hover:bg-gold hover:text-deepblack transition-colors duration-300;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-6 py-3 text-sm tracking-[0.2em] uppercase bg-transparent border border-cream/30 text-cream hover:border-cream hover:bg-cream/10 transition-colors duration-300;
+  }
+  .text-gold-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#C5A059] via-[#F2D780] to-[#C5A059];
+  }
+}
