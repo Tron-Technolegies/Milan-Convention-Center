@@ -1,85 +1,87 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 export default function AboutSection() {
   return (
-    <section id="about" className="relative py-24 md:py-32 bg-deepblack overflow-hidden">
-      <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-br from-gold/5 via-transparent to-transparent pointer-events-none"></div>
+    <section id="about" className="relative py-24 md:py-32 bg-bg-secondary overflow-hidden">
       
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
         
         {/* Text Content */}
-        <div className="lg:col-span-7">
-          <div className="text-[0.65rem] tracking-[0.25em] uppercase text-gold mb-8 border-l border-gold/40 pl-4">
+        <motion.div 
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="lg:col-span-6"
+        >
+          <div className="text-[0.65rem] tracking-[0.3em] uppercase text-gold-light mb-8 border-l border-gold-light/40 pl-4">
             Our Story
           </div>
           
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] text-cream mb-10">
-            A landmark <span className="italic font-light text-gold-gradient">reimagining</span><br/>
-            of what a venue<br/>can be.
+          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl leading-[1.05] text-text-primary mb-8">
+            A new landmark for celebrations and <span className="italic font-light text-gold-light">grand occasions</span>
           </h2>
           
-          <div className="space-y-6 max-w-xl text-cream/70 leading-relaxed font-light">
+          <div className="space-y-6 max-w-xl text-white/80 leading-relaxed font-light">
             <p>
-              Milan Conventional Center is a 43,000 square foot architectural landmark set against the horizon of Chettuva, Thrissur — a venue conceived for occasions that deserve more than ordinary.
-            </p>
-            <p>
-              Cantilevered wooden roofs, soaring glass facades, and sandstone volumes rooted in the land. Every surface, every sightline, every threshold has been composed as a canvas for the moments staged within it.
-            </p>
-            <p>
-              From intimate bridal salons to grand halls seating a thousand, Milan is where families, enterprises and visionaries come to mark their most defining moments.
+              Anchored in Chettuva, Thrissur, Milan spans 43,000 square feet of purposefully sculpted space. From soaring glass entryways to warm, acoustic woodwork, every square foot is engineered to lend an undeniable sense of grandeur to your occasion.
             </p>
           </div>
           
-          <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="border-t border-gold/20 pt-5">
-              <div className="font-display text-4xl md:text-5xl text-gold-gradient">43K</div>
-              <div className="mt-2 text-[0.65rem] tracking-[0.2em] uppercase text-cream/60">Square Feet</div>
+          <div className="mt-14 grid grid-cols-2 gap-8">
+            <div className="border-t border-gold-primary/20 pt-5">
+              <div className="font-display text-4xl text-gold-light">43K</div>
+              <div className="mt-2 text-[0.65rem] tracking-[0.2em] uppercase text-white/70">Square Feet</div>
             </div>
-            <div className="border-t border-gold/20 pt-5">
-              <div className="font-display text-4xl md:text-5xl text-gold-gradient">1K+</div>
-              <div className="mt-2 text-[0.65rem] tracking-[0.2em] uppercase text-cream/60">Dining Capacity</div>
+            <div className="border-t border-gold-primary/20 pt-5">
+              <div className="font-display text-4xl text-gold-light">1000+</div>
+              <div className="mt-2 text-[0.65rem] tracking-[0.2em] uppercase text-white/70">Dining Capacity</div>
             </div>
-            <div className="border-t border-gold/20 pt-5">
-              <div className="font-display text-4xl md:text-5xl text-gold-gradient">400+</div>
-              <div className="mt-2 text-[0.65rem] tracking-[0.2em] uppercase text-cream/60">Parking Spaces</div>
+            <div className="border-t border-gold-primary/20 pt-5">
+              <div className="font-display text-4xl text-gold-light">400+</div>
+              <div className="mt-2 text-[0.65rem] tracking-[0.2em] uppercase text-white/70">Parking Spaces</div>
             </div>
-            <div className="border-t border-gold/20 pt-5">
-              <div className="font-display text-4xl md:text-5xl text-gold-gradient">5</div>
-              <div className="mt-2 text-[0.65rem] tracking-[0.2em] uppercase text-cream/60">Signature Spaces</div>
+            <div className="border-t border-gold-primary/20 pt-5">
+              <div className="font-display text-4xl text-gold-light">5</div>
+              <div className="mt-2 text-[0.65rem] tracking-[0.2em] uppercase text-white/70">Signature Spaces</div>
             </div>
           </div>
-        </div>
+        </motion.div>
         
-        {/* Abstract/Placeholder Image Element */}
-        <div className="lg:col-span-5 relative">
-          <div className="relative aspect-[3/4] w-full overflow-hidden border border-gold/10">
-            <div className="absolute inset-0 bg-gradient-to-br from-maroon/80 via-charcoal to-deepblack"></div>
-            
-            {/* Abstract geometric lines simulating architecture */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-30">
-              <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
-                <line x1="0" y1="100" x2="100" y2="0" stroke="var(--color-gold)" strokeWidth="0.5" />
-                <line x1="20" y1="100" x2="100" y2="20" stroke="var(--color-gold)" strokeWidth="0.5" />
-                <line x1="40" y1="100" x2="100" y2="40" stroke="var(--color-gold)" strokeWidth="0.5" />
-                
-                <rect x="30" y="30" width="40" height="70" fill="transparent" stroke="var(--color-gold)" strokeWidth="1" />
-                <rect x="40" y="40" width="40" height="60" fill="var(--color-charcoal)" opacity="0.8" />
-              </svg>
-            </div>
-            
-            <div className="absolute inset-x-[20%] inset-y-[40%] bg-gold/10 blur-3xl rounded-full"></div>
-            <div className="absolute inset-4 border border-gold/20 pointer-events-none"></div>
+        {/* Asymmetrical Image Layout */}
+        <motion.div 
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="lg:col-span-6 relative"
+        >
+          <div className="relative aspect-[4/5] w-full overflow-hidden border border-gold-primary/20 shadow-2xl">
+            <img 
+              src="/img-1.jpeg" 
+              alt="Milan Architecture" 
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 border-[0.5px] border-gold-primary/30 pointer-events-none z-10 m-4"></div>
+            {/* Subtle warm overlay on image */}
+            <div className="absolute inset-0 bg-brown-dark/10 pointer-events-none z-10"></div>
           </div>
           
-          {/* Corner Accents */}
-          <div className="absolute -top-4 -left-4 w-16 h-16 border-t-2 border-l-2 border-gold/50"></div>
-          <div className="absolute -bottom-4 -right-4 w-16 h-16 border-b-2 border-r-2 border-gold/50"></div>
+          {/* Floating Experience Card */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="absolute -bottom-8 -left-8 bg-white/5 backdrop-blur-md border border-white/10 shadow-2xl p-6 w-64 hidden sm:block"
+          >
+            <div className="font-display text-6xl text-gold-light leading-none mb-2">15+</div>
+            <div className="text-[0.65rem] tracking-[0.2em] uppercase text-white/80">Years of Excellence</div>
+            <p className="mt-3 text-xs text-white/60 font-light">Crafting unforgettable moments in luxury spaces.</p>
+          </motion.div>
           
-          <div className="absolute -bottom-6 right-6 bg-deepblack border border-gold/20 px-6 py-3">
-            <div className="text-[0.55rem] tracking-[0.25em] uppercase text-gold">Architectural Detail</div>
-            <div className="font-display text-sm text-cream mt-1">The Cantilevered Pavilion</div>
-          </div>
-        </div>
+        </motion.div>
         
       </div>
     </section>

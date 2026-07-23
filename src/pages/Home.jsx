@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
-import StatsMarquee from '../components/StatsMarquee';
+import FeaturesRow from '../components/FeaturesRow';
+import PortfolioCarousel from '../components/PortfolioCarousel';
+import StatsAndCTA from '../components/StatsAndCTA';
 import AboutSection from '../components/AboutSection';
-import SpacesSection from '../components/SpacesSection';
 import FacilitiesSection from '../components/FacilitiesSection';
-import MapSection from '../components/MapSection';
+import EventTypes from '../components/EventTypes';
+import TestimonialsSection from '../components/TestimonialsSection';
+import LocationSection from '../components/LocationSection';
+import BookingCTA from '../components/BookingCTA';
 import Footer from '../components/Footer';
 import LoadingScreen from '../components/LoadingScreen';
 
@@ -13,21 +17,21 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   return (
-    <div className="min-h-screen bg-deepblack text-cream font-sans selection:bg-gold selection:text-deepblack">
-      {loading && <LoadingScreen onComplete={() => setLoading(false)} />}
-      
-      <div className={`transition-opacity duration-1000 ${loading ? 'opacity-0' : 'opacity-100'}`}>
+    <div className="min-h-screen bg-bg-main text-text-primary font-sans selection:bg-gold-primary selection:text-bg-main">
         <Navbar />
         <main>
           <HeroSection />
-          <StatsMarquee />
+          <FeaturesRow />
+          <PortfolioCarousel />
+          <StatsAndCTA />
           <AboutSection />
-          <SpacesSection />
           <FacilitiesSection />
-          <MapSection />
+          <EventTypes />
+          <TestimonialsSection />
+          <LocationSection />
+          <BookingCTA />
         </main>
         <Footer />
-      </div>
     </div>
   );
 }

@@ -23,7 +23,7 @@ export default function LoadingScreen({ onComplete }) {
     >
       <div className="flex flex-col items-center">
         <img 
-          src="/logo.jpeg" 
+          src="/logo.png" 
           alt="Milan Conventional Center" 
           className="w-16 h-16 sm:w-20 sm:h-20 object-contain mb-6 animate-pulse"
         />

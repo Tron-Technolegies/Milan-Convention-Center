@@ -1,72 +1,113 @@
 import React from 'react';
-import { Car, Wifi, Utensils, Shield, Wind, Accessibility } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Star, Wine, Camera, Music, Coffee, Map } from 'lucide-react';
 
 const facilities = [
   {
-    icon: Car,
-    title: 'Extensive Parking',
-    description: 'Valet-assisted parking for over 400 vehicles, ensuring seamless arrival for all your guests.'
+    title: 'Bespoke Interiors',
+    description: 'Thoughtfully detailed finishes designed to bring editorial polish to grand weddings and milestone celebrations.',
+    icon: Star
   },
   {
-    icon: Utensils,
-    title: 'Gourmet Catering',
-    description: 'State-of-the-art industrial kitchens capable of serving 1,000+ guests with bespoke culinary experiences.'
-  },
-  {
-    icon: Wind,
     title: 'Climate Control',
-    description: 'Fully air-conditioned halls and dining areas to keep you comfortable regardless of the season.'
+    description: 'The region’s largest fully air-conditioned complex, delivering silent, balanced comfort across every hall.',
+    icon: Wine
   },
   {
-    icon: Shield,
-    title: '24/7 Security',
-    description: 'Comprehensive surveillance and on-ground security personnel ensuring a safe, private event.'
+    title: 'Reception Atrium',
+    description: 'An expansive double-height foyer curated for fluid guest movement and an unforgettable opening statement.',
+    icon: Map
   },
   {
-    icon: Wifi,
-    title: 'High-Speed Connectivity',
-    description: 'Complimentary high-speed Wi-Fi across the venue to keep your events and guests connected.'
+    title: 'Performance Tech',
+    description: 'State-of-the-art media systems paired with precision geometric acoustic paneling for pristine audio delivery.',
+    icon: Music
   },
   {
-    icon: Accessibility,
-    title: 'Universal Access',
-    description: 'Wheelchair accessible ramps, elevators, and dedicated facilities designed for all guests.'
+    title: 'Culinary Excellence',
+    description: 'Integrated live culinary counters and flexible dining pavilions designed for high-capacity, effortless service.',
+    icon: Coffee
+  },
+  {
+    title: 'Scenic Backdrops',
+    description: 'Surrounded by the natural beauty of Chettuva, offering picturesque settings for outdoor photography.',
+    icon: Camera
   }
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1 }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+};
+
 export default function FacilitiesSection() {
   return (
-    <section id="facilities" className="relative py-24 md:py-32 bg-deepblack overflow-hidden border-t border-gold/10">
-      <div className="absolute inset-0 bg-gradient-to-t from-charcoal/40 to-transparent pointer-events-none"></div>
+    <section id="facilities" className="relative py-24 md:py-32 bg-bg-main overflow-hidden">
       
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
-          <div className="text-[0.65rem] tracking-[0.25em] uppercase text-gold mb-6">
-            World-Class Amenities
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center max-w-3xl mx-auto mb-16 md:mb-24"
+        >
+          <div className="text-[0.65rem] tracking-[0.3em] uppercase text-gold-light mb-6">
+            The Milan Difference
           </div>
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-cream mb-6">
-            Uncompromising <span className="italic font-light text-gold-gradient">Facilities</span>
+          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-white mb-8">
+            Venue <span className="italic font-light text-gold-light">Highlights</span>
           </h2>
-          <p className="text-cream/60 text-base leading-relaxed font-light">
-            Every detail at Milan has been thoughtfully curated to provide an effortless, luxurious experience from the moment your first guest arrives.
+          <p className="text-white/70 font-light leading-relaxed">
+            Every square foot is engineered to lend an undeniable sense of grandeur to your occasion.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+        >
           {facilities.map((facility, index) => (
-            <div key={index} className="group p-8 border border-gold/10 hover:border-gold/30 bg-charcoal/20 hover:bg-charcoal/40 transition-all duration-500">
-              <div className="w-12 h-12 flex items-center justify-center text-gold mb-6 bg-gold/5 group-hover:bg-gold/10 rounded-full transition-colors">
-                <facility.icon strokeWidth={1.5} size={24} />
+            <motion.div 
+              key={index} 
+              variants={itemVariants}
+              className="group relative p-8 md:p-10 bg-white/5 backdrop-blur-md border border-white/10 hover:border-white/20 hover:-translate-y-1 transition-all duration-500 overflow-hidden shadow-xl"
+            >
+              {/* Subtle background glow on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-gold-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              <div className="text-[3rem] font-display text-white/5 absolute -top-4 -right-0 font-bold select-none group-hover:text-gold-primary/10 transition-colors duration-500">
+                {(index + 1).toString().padStart(2, '0')}
               </div>
-              <h3 className="font-display text-2xl text-cream mb-3 group-hover:text-gold transition-colors">
+              
+              <div className="relative z-10 w-12 h-12 flex items-center justify-center text-gold-light mb-8 border border-gold-primary/30 rounded-full transition-transform duration-500 group-hover:scale-110 group-hover:bg-gold-primary/10">
+                <facility.icon strokeWidth={1} size={24} />
+              </div>
+              
+              <h3 className="relative z-10 font-display text-2xl text-white mb-4 group-hover:text-gold-light transition-colors duration-300">
                 {facility.title}
               </h3>
-              <p className="text-cream/60 text-sm font-light leading-relaxed">
+              
+              <p className="relative z-10 text-white/70 text-sm leading-relaxed font-light">
                 {facility.description}
               </p>
-            </div>
+              
+              {/* Animated bottom border */}
+              <div className="absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-gold-primary to-gold-light w-0 group-hover:w-full transition-all duration-700 ease-out"></div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
