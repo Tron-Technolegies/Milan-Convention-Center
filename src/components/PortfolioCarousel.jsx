@@ -12,6 +12,8 @@ export default function PortfolioCarousel() {
     '/img-6.jpeg',
     '/img-7.jpeg',
     '/img-8.jpeg',
+    '/img-9.jpeg',
+    '/img-10.jpeg',
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -32,7 +34,7 @@ export default function PortfolioCarousel() {
   ];
 
   return (
-    <section className="bg-bg-main py-20 md:py-32">
+    <section id="gallery" className="bg-bg-main py-12 md:py-32">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Header */}
         <div className="mb-16 max-w-2xl">
@@ -62,14 +64,14 @@ export default function PortfolioCarousel() {
           {/* Navigation Buttons */}
           <button 
             onClick={handlePrev}
-            className="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-bg-secondary border border-gold-primary/20 text-gold-primary hover:bg-gold-primary hover:text-bg-main transition-colors"
+            className="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 z-10 w-10 h-10 cursor-pointer md:w-12 md:h-12 flex items-center justify-center rounded-full bg-bg-secondary border border-gold-primary/20 text-gold-primary hover:bg-gold-primary hover:text-bg-main transition-colors"
           >
             <ChevronLeft size={20} />
           </button>
 
           <button 
             onClick={handleNext}
-            className="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-bg-secondary border border-gold-primary/20 text-gold-primary hover:bg-gold-primary hover:text-bg-main transition-colors"
+            className="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 z-10 w-10 h-10 cursor-pointer md:w-12 md:h-12 flex items-center justify-center rounded-full bg-bg-secondary border border-gold-primary/20 text-gold-primary hover:bg-gold-primary hover:text-bg-main transition-colors"
           >
             <ChevronRight size={20} />
           </button>
@@ -84,7 +86,7 @@ export default function PortfolioCarousel() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.4 }}
-                  className="relative aspect-[4/5] overflow-hidden"
+                  className={`relative aspect-[4/5] overflow-hidden ${idx !== 0 ? 'hidden md:block' : ''}`}
                 >
                   {/* Fallback styling in case image doesn't exist yet */}
                   <div className="absolute inset-0 bg-bg-secondary"></div>

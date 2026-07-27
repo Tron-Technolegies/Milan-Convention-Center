@@ -50,7 +50,7 @@ const itemVariants = {
 
 export default function FacilitiesSection() {
   return (
-    <section id="facilities" className="relative py-24 md:py-32 bg-bg-main overflow-hidden">
+    <section id="facilities" className="relative py-12 md:py-24 bg-bg-main overflow-hidden">
       
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <motion.div 

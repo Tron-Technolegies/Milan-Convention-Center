@@ -17,7 +17,7 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   return (
-    <section id="testimonials" className="py-24 md:py-32 bg-bg-main relative overflow-hidden">
+    <section id="testimonials" className="py-12 md:py-24 bg-bg-main relative overflow-hidden">
       
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="text-center mb-16 md:mb-24">

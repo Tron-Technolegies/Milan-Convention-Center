@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export default function AboutSection() {
   return (
-    <section id="about" className="relative py-24 md:py-32 bg-bg-secondary overflow-hidden">
+    <section id="about" className="relative py-12 md:py-24 bg-bg-secondary overflow-hidden">
       
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
         
@@ -76,7 +76,7 @@ export default function AboutSection() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="absolute -bottom-8 -left-8 bg-white/5 backdrop-blur-md border border-white/10 shadow-2xl p-6 w-64 hidden sm:block"
           >
-            <div className="font-display text-6xl text-gold-light leading-none mb-2">15+</div>
+            <div className="font-display text-6xl text-gold-light leading-none mb-2">1+</div>
             <div className="text-[0.65rem] tracking-[0.2em] uppercase text-white/80">Years of Excellence</div>
             <p className="mt-3 text-xs text-white/60 font-light">Crafting unforgettable moments in luxury spaces.</p>
           </motion.div>

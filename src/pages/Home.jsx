@@ -4,6 +4,7 @@ import HeroSection from '../components/HeroSection';
 import FeaturesRow from '../components/FeaturesRow';
 import PortfolioCarousel from '../components/PortfolioCarousel';
 import StatsAndCTA from '../components/StatsAndCTA';
+import VideoSection from '../components/VideoSection';
 import AboutSection from '../components/AboutSection';
 import FacilitiesSection from '../components/FacilitiesSection';
 import EventTypes from '../components/EventTypes';
@@ -24,6 +25,7 @@ export default function Home() {
           <FeaturesRow />
           <PortfolioCarousel />
           <StatsAndCTA />
+          <VideoSection />
           <AboutSection />
           <FacilitiesSection />
           <EventTypes />

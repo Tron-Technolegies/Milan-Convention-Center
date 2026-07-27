@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 
 export default function WhyChooseUs() {
   return (
-    <section id="why-choose-us" className="py-24 md:py-32 bg-bg-secondary relative overflow-hidden">
+    <section id="why-choose-us" className="py-12 md:py-24 bg-bg-secondary relative overflow-hidden">
       
-      <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10">
         
         {/* Text Side */}
         <motion.div

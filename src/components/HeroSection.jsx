@@ -15,20 +15,23 @@ export default function HeroSection() {
           alt="Milan Conventional Center" 
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
-        {/* Warm luxury brown overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-bg-main/70 via-bg-main/30 to-bg-main/90"></div>
+        {/* Much darker, high-contrast luxury brown overlay for text readability */}
+        <div className="absolute inset-0 bg-bg-main/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-bg-main via-transparent to-bg-main/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-bg-main via-bg-main/60 to-transparent w-full md:w-4/5"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto w-full relative z-20 px-6 md:px-12 pt-32 pb-20 flex flex-col items-start justify-center text-left">
+      <div className="max-w-7xl mx-auto w-full relative z-20 px-6 md:px-12 pt-28 pb-12 md:pt-32 md:pb-20 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
         
         {/* Text Content */}
-        <div className="flex flex-col items-start max-w-4xl">
+        <div className="flex-1 text-center md:text-left mt-8 md:mt-0 drop-shadow-2xl">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-[0.7rem] tracking-[0.3em] uppercase text-gold-primary mb-8 border-l border-gold-primary/40 pl-4"
+            className="text-[0.7rem] sm:text-xs tracking-[0.3em] uppercase text-gold-light mb-8 font-semibold"
           >
+            <span className="hidden md:inline-block w-8 h-[1px] bg-gold-light/60 align-middle mr-4"></span>
             Chettuva · Thrissur · Kerala
           </motion.div>
           
@@ -36,17 +39,17 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-text-primary mb-8"
+            className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight text-white mb-8 drop-shadow-lg"
           >
-            <span className="block mb-2">Elevate Your Events</span>
-            <span className="block italic text-gold-gradient">with Extraordinary Spaces</span>
+            <span className="block mb-2 font-medium">Elevate Your Events</span>
+            <span className="block italic text-gold-light font-normal drop-shadow-md">with Extraordinary Spaces</span>
           </motion.h1>
           
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="max-w-2xl text-text-secondary text-base md:text-lg leading-relaxed font-light"
+            className="max-w-2xl mx-auto md:mx-0 text-white/90 text-base md:text-lg leading-relaxed font-light drop-shadow-md"
           >
             Tailored spaces, endlessly adaptable designed around a single vision: making every moment extraordinary.
           </motion.p>
@@ -55,7 +58,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="mt-12 flex flex-wrap gap-6 justify-start"
+            className="mt-12 flex flex-wrap gap-6 justify-center md:justify-start"
           >
             <a href="#booking" className="btn-gold">
               <span>Book Venue</span>

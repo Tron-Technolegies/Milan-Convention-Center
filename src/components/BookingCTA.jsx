@@ -4,7 +4,7 @@ import { ArrowRight, CalendarDays, PhoneCall } from 'lucide-react';
 
 export default function BookingCTA() {
   return (
-    <section id="booking" className="py-24 md:py-32 bg-bg-secondary relative overflow-hidden">
+    <section id="booking" className="py-12 md:py-24 bg-bg-secondary relative overflow-hidden">
       
       <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10">
         <motion.div 
@@ -12,14 +12,14 @@ export default function BookingCTA() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="relative bg-white/5 backdrop-blur-md border border-white/10 p-10 md:p-20 text-center overflow-hidden shadow-2xl"
+          className="relative bg-bg-main border border-gold-primary/10 p-10 md:p-20 text-center overflow-hidden shadow-2xl"
         >
           {/* Decorative background elements inside the card */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[2px] bg-gradient-to-r from-transparent via-gold-light to-transparent"></div>
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-[2px] bg-gradient-to-r from-transparent via-gold-light to-transparent"></div>
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[2px] bg-gradient-to-r from-transparent via-gold-light to-transparent opacity-50"></div>
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-[2px] bg-gradient-to-r from-transparent via-gold-light to-transparent opacity-50"></div>
           
           <div className="relative z-10">
-            <div className="w-16 h-16 mx-auto bg-bg-main border border-gold-light/40 rotate-45 flex items-center justify-center mb-10 shadow-lg">
+            <div className="w-16 h-16 mx-auto bg-bg-secondary border border-gold-light/20 rotate-45 flex items-center justify-center mb-10 shadow-lg">
               <CalendarDays className="text-gold-light -rotate-45" size={24} />
             </div>
             
